@@ -10,6 +10,7 @@ libraryDependencies ++= Seq(
     "org.specs2" %% "specs2" % "1.7.1" % "test",
     "oracle" % "ojdbc14" % "10.2.0.2",
     "ch.qos.logback" % "logback-classic" % "0.9.29",
+    "org.slf4j" % "slf4j-api" % "1.6.4",
     "org.scalatest" %% "scalatest" % "1.6.1" % "test",
     "org.springframework" % "spring-context" % "3.1.1.RELEASE",
     "org.springframework" % "spring-jdbc" % "3.1.1.RELEASE",
