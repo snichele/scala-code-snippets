@@ -49,8 +49,6 @@ object ZipoExportFP {
       )
     )
 
-
-
     def dumpToFile(request:String,institutionId:String)(dumpRow : (ResultSet,FileWriter)=>Unit)(implicit writer : FileWriter ) {
       val requestParametrized = request |> fillSqlParams ∘ replace(":PARAM_ID_CLIENT_ERMS",institutionId)
 

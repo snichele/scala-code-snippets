@@ -1,0 +1,12 @@
+//val cs = List('3','C','3','F','7','8','6','D','6','C','2','0')
+val cs = scala.io.Source.fromFile("sc_ERMS_CLIENT@20120509153000.xml").getLines.mkString
+cs.foldLeft(("",List[Char]()))((r,c)=> {
+    r._2.length match {
+        case 2 => {
+            (r._1+Integer.valueOf(r._2.reverse.toList.mkString, 16).intValue.toChar,List[Char](c))
+        }
+        case _ => {
+            (r._1,c::r._2)
+        }
+    }
+})._1
