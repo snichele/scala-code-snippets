@@ -6,7 +6,9 @@ import play.api.mvc._
 object Application extends Controller {
   
   def index = Action {
-    Ok(views.html.index("Your new application is ready."))
+  	import models._
+
+    Ok( Scalate("index.jade").render('user -> User("Raible"))).as(HTML)
   }
   
 }
