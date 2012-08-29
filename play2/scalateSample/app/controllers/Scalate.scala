@@ -14,7 +14,7 @@ object Scalate {
 
   var format = Play.configuration.getString("scalate.format") match {
     case Some(configuredFormat) => configuredFormat
-    case _ => "test"
+    case _ => "jade" // todo : enhance this, hard coded for now.
   }
 
   lazy val scalateEngine = {

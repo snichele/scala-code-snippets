@@ -1,0 +1,12 @@
+-@ var title: String = "Default title from template"
+-@ var body: String
+!!! 5
+html(lang="en")
+  head
+    title #{title}
+    -# <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+    :javascript
+  body
+    h1 Template
+    #container
+      = unescape(body)
