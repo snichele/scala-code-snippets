@@ -1,5 +1,5 @@
 package controllers
- 
+
 import play.mvc.Http
 import play.api._
 import http.{Writeable, ContentTypeOf, ContentTypes}
@@ -32,11 +32,11 @@ object Scalate {
 
   case class Template(name: String) {
 
-    def render(args: (Symbol, Any)*) = {
+    def render(args: Map[String, Any]) = {
+      import play.api.Play._
+      val argsWithPlayObjects = args ++ Map("routes" -> routes)
       ScalateContent{
-        scalateEngine.layout(name, args.map {
-          case (k, v) => k.name -> v
-        } toMap)
+        scalateEngine.layout(name, argsWithPlayObjects)
       }
     }
 

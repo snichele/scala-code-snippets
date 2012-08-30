@@ -4,8 +4,8 @@ import play.api._
 import play.api.mvc._
 
 object Application extends Controller {
-  
+
   def index = Action {
-    Ok( Scalate("index.jade").render('message -> "Hello world")).as(HTML)
+    Ok( Scalate("index.jade").render(Map("message" -> "Hello world"))).as(HTML)
   }
 }
