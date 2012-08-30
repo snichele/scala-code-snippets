@@ -81,8 +81,18 @@ object Ch3 {
       case Cons(h,t) => buf += h; go(t)
     }
     go(l)
-  }  
+  }
+
+  def foldRight[A,B](list: List[A], z: B)(f: (A, B) => B): B =
+    list match {
+      case Nil => z
+      case Cons(x, xs) => f(x, foldRight(xs, z)(f))
+    }
+
+  def sum2(ints: List[Int]) = foldRight(ints, 0.0)(_ + _)
+  def product2(ints: List[Double]) = foldRight(ints, 1.0)(_ * _)  
 }
+
 import Ch3._
 val x = List(1,2,3,4,5) match {
   case Cons(x, Cons(2, Cons(4, _))) => x
